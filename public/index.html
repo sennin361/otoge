@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>仙人音ゲー</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="homeScreen" class="screen">
+    <h1>仙人音ゲー</h1>
+    <button onclick="startGame()">ゲームスタート</button>
+    <button onclick="viewScores()">スコアを見る</button>
+  </div>
+
+  <div id="gameScreen" class="screen hidden">
+    <h2>難易度: <span id="difficultyLabel">NORMAL</span></h2>
+    <div id="noteArea"></div>
+    <div id="combo">0 COMBO</div>
+    <div id="rank">RANK: C</div>
+    <div id="score">Score: 0</div>
+    <button class="touch-btn" ontouchstart="hitNote()">TAP!</button>
+  </div>
+
+  <div id="resultScreen" class="screen hidden">
+    <h2>終了！</h2>
+    <div>最終スコア: <span id="finalScore"></span></div>
+    <div>コンボ: <span id="finalCombo"></span></div>
+    <div>ランク: <span id="finalRank"></span></div>
+    <input type="text" id="playerName" placeholder="名前を入力">
+    <button onclick="saveScore()">スコア保存</button>
+    <button onclick="goHome()">ホームに戻る</button>
+  </div>
+
+  <div id="scoreScreen" class="screen hidden">
+    <h2>保存されたスコア</h2>
+    <ul id="scoreList"></ul>
+    <button onclick="goHome()">ホームに戻る</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
